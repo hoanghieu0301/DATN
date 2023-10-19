@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{user/layout/index :: dynamic(~{::main})}">
+
+
+<body>
+	<main th:object="${item}">
+		<div class="wrapper-cart tin__tuc" >
+				<div class="titledetail" th:text="*{post_conten}"> </div>
+				<br>
+				<div class="tintuc_detail" th:utext="*{Detail}" ></div>
+		</div>
+	</main>
+</body>
+</html>
