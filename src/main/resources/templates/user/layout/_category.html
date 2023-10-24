@@ -29,7 +29,7 @@
 					<select name="Category_id" data-live-search="true" class="form-control text-center">
 						<option hidden="true" value="">Tất cả</option>
 						<div class="form-group selectpicker show-tick" th:each="c,state:${cates}">
-							<option  th:value="${c.Category_id}">[[${c.name}]]</option>
+<!--							<option  th:value="${c.Category_id}">[[${c.name}]]</option>-->
 						</div>
 					</select>
 				</div>
@@ -54,6 +54,8 @@
 						<option value="">Tất cả</option>
 						<option value="2GB">2GB</option>
 						<option value="4GB">4GB</option>
+						<option value="6GB">6GB</option>
+						<option value="8GB">8GB</option>
 					</select>
 				</div>
 			</div>
@@ -62,6 +64,7 @@
 				<div class="col-sm-6">
 					<select name="Rom" data-live-search="true"	class="form-control text-center">
 						<option value="">Tất cả</option>
+						<option value="256GB">256GB</option>
 						<option value="128GB">128GB</option>
 						<option value="64GB">64GB</option>
 						<option value="32GB">32GB</option>

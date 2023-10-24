@@ -18,36 +18,36 @@
 		<div class="panel-body">
 			<form th:action="@{/admin/product/create}" method="post" modelAttribute="pro" enctype="multipart/form-data">
 				<div class="row">
-					<div class="col-sm-4 text-center">
-						<label for="image1"> <img
-							th:src="@{|/assets/images/${pro.Image1}|}"
-							style="max-width: 100%; height: 200px;" alt="ảnh 1">
-						</label>
-						<label for="image2"> <img
-							th:src="@{|/assets/images/${pro.Image2}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 2">
-						</label>
-						<label for="image3"> <img
-							th:src="@{|/assets/images/${pro.Image3}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 3">
-						</label>
-						<label for="image4"> <img
-							th:src="@{|/assets/images/${pro.Image4}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 4">
-						</label>
-						<label for="image5"> <img
-							th:src="@{|/assets/images/${pro.Image5}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 5">
-						</label>
-						<label for="image6"> <img
-							th:src="@{|/assets/images/${pro.Image6}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 6">
-						</label>
-						<label for="image7"> <img
-							th:src="@{|/assets/images/${pro.Image7}|}"
-							style="max-width: 50%; height: 100px;" alt="ảnh 7">
-						</label>
-					</div>
+<!--					<div class="col-sm-4 text-center">-->
+<!--						<label for="image1"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image1}|}"-->
+<!--							style="max-width: 100%; height: 200px;" alt="ảnh 1">-->
+<!--						</label>-->
+<!--						<label for="image2"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image2}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 2">-->
+<!--						</label>-->
+<!--						<label for="image3"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image3}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 3">-->
+<!--						</label>-->
+<!--						<label for="image4"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image4}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 4">-->
+<!--						</label>-->
+<!--						<label for="image5"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image5}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 5">-->
+<!--						</label>-->
+<!--						<label for="image6"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image6}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 6">-->
+<!--						</label>-->
+<!--						<label for="image7"> <img-->
+<!--							th:src="@{|/assets/images/${pro.Image7}|}"-->
+<!--							style="max-width: 50%; height: 100px;" alt="ảnh 7">-->
+<!--						</label>-->
+<!--					</div>-->
 					<div class="col-sm-8">
 						<div class="row">
 							<div class="form-group col-sm-6">
@@ -95,9 +95,9 @@
 <!-- 								<input type="text" name="category.Name" th:value="${pro.category.Name}" -->
 <!-- 									class="form-control"> -->
 							<select name="category.Category_id"  data-live-search="true" class="form-group col-sm-12 selectpicker show-tick" style="height: 36px;" >
-								
+
 								<div class="form-group selectpicker show-tick" th:each="c,state:${cates}">
-								<option th:value="${c.Category_id}" >[[${c.name}]]</option> 
+								<option th:value="${c.Category_id}" >[[${c.name}]]</option>
 								</div>
 							</select>
 							</div>
@@ -124,15 +124,15 @@
 							</div>
 							<div class="form-group col-sm-6">
 								<div>Ram</div>
-<!--								<input type="text" name="Ram" th:value="${pro.Ram}"-->
-<!--									class="form-control" required>-->
-								<select id="Ram">
-									<option value="volvo">4GB</option>
-									<option value="saab">8GB</option>
-									<option value="vw">16GB</option>
-									<option value="audi" selected>32GB</option>
-									<option value="audi" >64GB</option>
-								</select>
+								<input type="text" name="Ram" th:value="${pro.Ram}"
+									class="form-control" required>
+<!--								<select id="Ram">-->
+<!--									<option value="volvo">4GB</option>-->
+<!--									<option value="saab">8GB</option>-->
+<!--									<option value="vw">16GB</option>-->
+<!--									<option value="audi" selected>32GB</option>-->
+<!--									<option value="audi" >64GB</option>-->
+<!--								</select>-->
 							</div>
 							<div class="form-group col-sm-6">
 								<div>Bộ nhớ</div>

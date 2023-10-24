@@ -447,8 +447,6 @@ table {
   .rating__input:hover ~ .rating__label .rating__icon--star {
     color: #ddd;
   }
-  
-  
 
 .product-thumb-detail {
 	padding: 20px 60px;
@@ -3387,7 +3385,7 @@ table {
     }
     
     .client-designation {
-        color: #198997;
+        color: oldlace;
     }
     /* ----------------------------------------------
 	3.2.9 Owl nav
@@ -3635,7 +3633,7 @@ table {
     }
     
     .footer {
-        background: #121212;
+        background: firebrick;
     }
     
     .footer-title,

@@ -449,7 +449,7 @@ ul.sidebar-menu {
 }
 
 ul.sidebar-menu li ul.sub li{
-    background: #2f323a;
+    background: linear-gradient(45deg, black, transparent);
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
