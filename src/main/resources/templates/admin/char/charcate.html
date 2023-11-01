@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <title>GoalShop-Admin</title>
-	
+
     <!-- Favicons -->
     <link href="/assets/admin/img/favicon.png" rel="icon">
     <link href="/assets/admin/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -31,7 +31,7 @@
 	href="https://code.highcharts.com/css/highcharts.css">
 
 
- 
+
 </head>
 
 <body  ng-app="admin-ctrl">
@@ -40,7 +40,7 @@
  	<div th:replace="/admin/layout/_aside.html"></div>
  	 <section id="main-content">
       <section class="wrapper">
- 	
+
  	 <div class="row mt">
            <div class="col-md-12">
             <div class="content-panel">
@@ -69,29 +69,29 @@
                     <td>[[${#numbers.formatDecimal(r.max, 0, 'COMMA', 0, 'POINT')}]] Đ</td>
                     <td >[[${#numbers.formatDecimal(r.avg, 0, 'COMMA', 0, 'POINT')} ]] Đ</td>
                   </tr>
-   
+
                 </tbody>
               </table>
-             
+
             </div>
-            
+
             <!-- /content-panel -->
-         
+
         </div>
-        
+
           <!-- /col-md-12 -->
            <div class="col-md-12" >
           <div class="content-panel" id="char2"></div>
           </div>
         </div>
 
-		
 
 
 
 
- 	
- 
+
+
+
  	</section></section>
  	<div th:replace="/admin/layout/_footer.html"></div>
  	</section>
@@ -113,7 +113,7 @@
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-   
+
 
     <script type="application/javascript">
         $(document).ready(function() {
@@ -173,7 +173,7 @@
 			for (var i = 0; i < result.length; i++) {
 				var name = {};
 				name = result[i].group;
-				
+
 				name_product.push(name);
 			}
 			for (var i = 0; i < result.length; i++) {
@@ -203,7 +203,7 @@
 
 			seri.push(seriObject);
 			drawColumnChart(datacolumn1, datacolumn2, name_product);
-		
+
 
 		}
 	});
@@ -255,8 +255,8 @@
 
 		});
 	}
-	
-	
+
+
 </script>
 
 
