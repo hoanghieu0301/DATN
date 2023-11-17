@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{user/layout/index :: dynamic(~{::main})}">
+
+
+<body>
+<main>
+
+		<div class="product__top">
+		<div class="text-center">
+			<div th:replace="user/layout/_bannerQC.html"></div>
+		</div>
+		
+
+		<div class="card m-b-30 fpheadbox" style=" padding: 10px;">
+			<div class="heading-part mb_20 ">
+				<h2 class="main_title ">Điện thoại</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+				<div class="brand owl-carousel ">
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=1}"><img th:src="@{|/assets/images/thuonghieu/samsung.jpg|}"></a>
+						</div>
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=2}"><img th:src="@{|/assets/images/thuonghieu/iphone.jpg|}"></a>
+						</div>
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=3}"><img th:src="@{|/assets/images/thuonghieu/oppo.jpg|}"></a>
+						</div>
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=4}"><img th:src="@{|/assets/images/thuonghieu/realme.jpg|}"></a>
+						</div>
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=5}"><img th:src="@{|/assets/images/thuonghieu/vivo.jpg|}"></a>
+						</div>
+						<div class="item text-center">
+							<a class="box-quicklink__item" th:href="@{/product/list/findByTrademarkId/1?tid=6}"><img th:src="@{|/assets/images/thuonghieu/xiaomi.jpg|}"></a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="category-page-wrapper mb_30">
+			<div class="list-grid-wrapper pull-left">
+				<div class="btn-group btn-list-grid">
+					<button type="button" id="grid-view"
+						class="btn btn-default grid-view active"></button>
+					<button type="button" id="list-view"
+						class="btn btn-default list-view"></button>
+				</div>
+			</div>
+			
+			<div class="sort-wrapper ">
+				<label class="control-label" for="input-sort" style="    margin-left: 77rem;">Sắp xếp theo: </label>
+					<a th:href="@{/product/list/desc/1}">Giảm dần</a>
+					<a th:href="@{/product/list/asc/1}">Tăng dần</a>
+			</div>
+		</div>
+		<div class="">
+			<div class="product-layout  product-grid  col-md-3 col-sm-6 col-xs-12 " th:each="p:${items}">
+				<div class="item">
+					<div class="product-thumb clearfix mb_30">
+						<div class="image product-imageblock">
+							<a th:href="@{|/product/detail/${p.product_id}|}"> <img
+								data-name="product_image" th:src="@{|/assets/images/${p.image1}|}"
+								alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+								
+							</a>
+							<div class="button-group text-center">
+								<a th:href="@{|/product/detail/${p.product_id}|}">
+									<div class="quickview">
+									</div>
+								</a>
+								<a th:attr="ng-click=@{|cart.add(${p.product_id})|}">
+									<div class="add-to-cart">									
+									</div>
+								</a>
+							</div>
+						</div>
+						<span class="sales__product_new" th:if="${p.lastest} == true">
+				           <img alt="" src="https://cdn-icons-png.flaticon.com/512/179/179452.png">
+				        </span>
+
+						<span class="sales__product" th:if="${p.distcount} > 0">
+				            <i class="fa fa-bolt" style="font-size:18px"></i> Giảm [[${#numbers.formatDecimal(p.distcount, 1 , 'COMMA',0,'POINT')}]] %
+				        </span>
+						<div class="caption product-detail text-center" >
+							<h6 data-name="product_name" class="product-name mt_20">
+								<a href="#" title="Casual Shirt With Ruffle Hem" th:utext="${p.name}" class="cdt-product__name"></a>
+							</h6>
+							<div class="rating">
+								<span class="rating1" title="RAM "> [[${p.ram}]] </span> 
+								<span class="rating2" title="Bộ nhớ trong ">  [[${p.rom}]] </span> 
+							</div>
+							<span class="price"><span class="amount">
+								[[${#numbers.formatDecimal(p.unit_price, 3 , 'COMMA',0,'POINT')} ]] Đ
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+		<div class="dataTables_paginate paging_bootstrap pagination text-center">
+			<ul>
+				<li><a href="/product/special?page=0"><i class="fa fa-angle-left"></i></a></li>
+				<li class="active"><a href="/product/list?page=0">1</a></li>
+				<li><a href="/product/special?page=1">2</a></li>
+				<li><a href="/product/special?page=2">3</a></li>
+				<li><a href="/product/special?page=3"><i class="fa fa-angle-right"></i></a></li>
+			</ul>
+		</div>
+		</div>
+		</div>
+	</main>
+	</body>
