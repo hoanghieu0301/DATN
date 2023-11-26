@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{admin/layout/index :: dynamic(~{::main})}">
+
+
+<body>
+	<main>
+		<div class="row mt">
+			<div class="col-md-12">
+				<div class="content-panel" style="min-height: 640px">
+					<h3>
+						&emsp;<i class="fa fa-angle-right"></i> Thông tin chi tiết
+						&nbsp;&nbsp;&nbsp;&nbsp; 
+						<a style="float: right; padding: 0 15px;"  tH:href=@{/admin/voucher/list}>
+							<i class="fa fa-mail-reply" style="font-size:18px"></i> Quay lại
+							danh sách </a>
+					</h3>
+					<div class="panel-body">
+						<form th:action="@{/admin/voucher/edit}" method="post"
+							modelAttribute="voucher" enctype="multipart/form-data">
+
+							<div class="panel-heading text-center"
+								style="color: #54aee2; font-style: oblique; font-variant: inherit; font-weight: bolder;"></div>
+							<div class="row">
+
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="form-group col-sm-6" hidden="true">
+											<div>Id :</div>
+											<input type="text" name="voucher_id"
+												   th:value="${voucher.voucher_id}" class="form-control" readonly="readonly">
+										</div>
+										<div class="form-group col-sm-6">
+											<div>Mã voucher</div>
+											<input type="text" name="voucherName"
+												   th:value="${voucher.voucherName}" class="form-control" required>
+										</div>
+										<div class="form-group col-sm-6">
+											<div>Mức giá áp dụng:</div>
+											<input type="number" name="estimate" th:value="${voucher.estimate}"
+												   class="form-control" required>
+										</div>
+										<div class="form-group col-sm-6">
+											<div>Giá Voucher:</div>
+											<input type="number" name="voucher_price" th:value="${voucher.voucher_price}"
+												   class="form-control" required>
+										</div>
+
+										<div class="form-group col-sm-6">
+											<div>Ngày bắt đầu</div>
+											<input type="datetime-local" name="createDate"
+												   th:value="${voucher.createDate}"
+												   class="form-control" required>
+										</div>
+										<div class="form-group col-sm-6">
+											<div>Ngày hết hạn</div>
+											<input type="datetime-local" name="endDate" th:value="${voucher.endDate}"
+												   class="form-control" required>
+										</div>
+										<div class="form-group col-sm-12">
+											<div>Ghi chú:</div>
+											<textarea name="voucher_content" th:value="${voucher.voucher_content}"
+													  class="form-control ">[[${voucher.voucher_content}]]</textarea>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="text-center">
+									<button th:formaction="@{/admin/voucher/update}"
+										class="btn btn-round btn-info">
+										<span class="glyphicon glyphicon-check"></span> Cập nhập
+									</button>
+									<a th:href="@{|/admin/voucher/delete/form/${voucher.voucher_id}|}"
+										class='btn btn-round btn-danger'><span
+										class="glyphicon glyphicon-remove"></span> Xóa</a>
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</main>
+</body>
+</html>
