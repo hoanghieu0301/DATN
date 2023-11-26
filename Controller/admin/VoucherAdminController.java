@@ -79,53 +79,8 @@ public class VoucherAdminController {
 		model.addAttribute("items", pages);
 		return "/admin/voucher/list";
 	}
-	@GetMapping("/admin/voucher/findIdorName")
-	public String search(@RequestParam("keyword") String keyword, Model model) {
-		if (keyword.equals("")) {
-			return "redirect:/admin/voucher/list";
-		}
-		model.addAttribute("items", voucherDao.finbyIdOrName(keyword));
-		return "list";
-	}
-	@RequestMapping("/admin/voucher/findIdorName/{pageNumber}")
-	public String findIdorName(Model model ,  @RequestParam("keyword") String keyword, HttpServletRequest request,
-			@PathVariable int pageNumber) {
-		if (keyword.equals("")) {
-			return "redirect:/admin/voucher/list";
-		}
-		List<Voucher> list = voucherDao.finbyIdOrName(keyword);
-		if (list == null) {
-			return "redirect:/admin/voucher/list";
-		}
-		model.addAttribute("sizepro", list.size());
-		PagedListHolder<?> pages = (PagedListHolder<?>) request.getSession().getAttribute("postlist");
-		int pagesize = 9;
-		pages = new PagedListHolder<>(list);
-		pages.setPageSize(pagesize);
-		final int goToPage = pageNumber - 1;
-		if (goToPage <= pages.getPageCount() && goToPage >= 0) {
-			pages.setPage(goToPage);
-		}
-		request.getSession().setAttribute("voucherlist", pages);
-		int current = pages.getPage() + 1;
-		int begin = Math.max(1, current - list.size());
-		int end = Math.min(begin + 5, pages.getPageCount());
-		int totalPageCount = pages.getPageCount();
-		String baseUrl = "/admin/voucher/list/page/";
-		model.addAttribute("beginIndex", begin);
-		model.addAttribute("endIndex", end);
-		model.addAttribute("currentIndex", current);
-		model.addAttribute("totalPageCount", totalPageCount);
-		model.addAttribute("baseUrl", baseUrl);
-		model.addAttribute("items", pages);
-		return "/admin/voucher/list";
-	}
-	@RequestMapping("/admin/voucher/findallkeyword")
-	public String findallkeyword(Model model) {
-		List<Voucher> list = voucherDao.findAll();
-		model.addAttribute("items", list);
-		return "list";
-	}
+
+
 
 	@RequestMapping("admin/voucher/edit")
 	public String edit(Model model, @RequestParam("voucher_id") Integer post_id) {
