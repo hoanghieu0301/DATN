@@ -31,7 +31,7 @@ import com.poly.entity.Product;
 import com.poly.entity.Report;
 import com.poly.entity.Trademark;
 import com.poly.service.AccountService;
-
+// Chu thich
 @Controller
 public class AccountAdminController {
 	@Autowired
